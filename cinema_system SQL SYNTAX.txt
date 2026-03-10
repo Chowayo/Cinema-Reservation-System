@@ -24,11 +24,12 @@ CREATE TABLE `movies` (
   `duration` varchar(255) NOT NULL,
   `price` int(11) NOT NULL,
   `mtrbc_rating` varchar(255) NOT NULL,
-  PRIMARY KEY (`id`)
+  PRIMARY KEY (`id`),
+  UNIQUE KEY `movie_name` (`movie_name`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 
-Insert in Movies:
+Insert in movies:
 
 INSERT INTO `movies` (`id`, `cinema_room`, `movie_name`, `genre`, `duration`, `price`, `mtrbc_rating`) VALUES
 (1, 'Cinema 1', 'Materialists', 'RomCom', '1h 57m', 230, 'SPG'),
@@ -38,18 +39,24 @@ INSERT INTO `movies` (`id`, `cinema_room`, `movie_name`, `genre`, `duration`, `p
 
 
 
-Reserved tickets table: NOTE: U-update ko pa to para maging foreign key yung 'movie_name' sa movies
+Reserved tickets table: (Foreign key sa movies     
 
 CREATE TABLE `reserved_tickets` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
-  `movie_name` varchar(255) NOT NULL DEFAULT 'empty',
+  `movie_name` varchar(255) NOT NULL,
   `schedule` varchar(255) NOT NULL DEFAULT 'empty',
   `date` varchar(255) NOT NULL DEFAULT 'empty',
   `payment` double NOT NULL DEFAULT 0,
   `seat` varchar(255) NOT NULL DEFAULT 'empty',
   `occupant` varchar(255) NOT NULL DEFAULT 'regular',
-  PRIMARY KEY (`id`)
+  PRIMARY KEY (`id`),
+  CONSTRAINT `fk_movie_link` 
+    FOREIGN KEY (`movie_name`) 
+    REFERENCES `movies` (`movie_name`) 
+    ON DELETE CASCADE 
+    ON UPDATE CASCADE
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
 
 
 
