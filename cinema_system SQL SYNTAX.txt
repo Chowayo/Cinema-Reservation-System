@@ -35,3 +35,23 @@ INSERT INTO `movies` (`id`, `cinema_room`, `movie_name`, `genre`, `duration`, `p
 (2, 'Cinema 2', 'Love Me, Love Me', 'Drama', '1h 39m', 230, 'PG-13'),
 (3, 'Cinema 3', 'Hoppers', 'Comedy', '1h 45m', 230, 'PG-13'),
 (4, 'Cinema 4', 'Scream 7', 'Horror', '1h 54m', 230, 'SPG');
+
+
+
+Reserved tickets table: NOTE: U-update ko pa to para maging foreign key yung 'movie_name' sa movies
+
+CREATE TABLE `reserved_tickets` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `movie_name` varchar(255) NOT NULL DEFAULT 'empty',
+  `schedule` varchar(255) NOT NULL DEFAULT 'empty',
+  `date` varchar(255) NOT NULL DEFAULT 'empty',
+  `payment` double NOT NULL DEFAULT 0,
+  `seat` varchar(255) NOT NULL DEFAULT 'empty',
+  `occupant` varchar(255) NOT NULL DEFAULT 'regular',
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+
+
+
+
