@@ -46,7 +46,6 @@ CREATE TABLE `reserved_tickets` (
   `movie_name` varchar(255) NOT NULL,
   `schedule` varchar(255) NOT NULL DEFAULT 'empty',
   `date` varchar(255) NOT NULL DEFAULT 'empty',
-  `payment` double NOT NULL DEFAULT 0,
   `seat` varchar(255) NOT NULL DEFAULT 'empty',
   `occupant` varchar(255) NOT NULL DEFAULT 'regular',
   PRIMARY KEY (`id`),
@@ -56,6 +55,7 @@ CREATE TABLE `reserved_tickets` (
     ON DELETE CASCADE 
     ON UPDATE CASCADE
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
 
 
 
