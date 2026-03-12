@@ -60,5 +60,20 @@ CREATE TABLE `reserved_tickets` (
 
 
 
+EXTRA IN TERMINAL:
+
+//FOR ENCRYPT
+pip install cryptography
+
+
+
+
+
+
+
+
+
+
+
 
 
