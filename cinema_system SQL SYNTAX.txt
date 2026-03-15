@@ -48,7 +48,7 @@ CREATE TABLE `reserved_tickets` (
   `date` varchar(255) NOT NULL DEFAULT 'empty',
   `seat` varchar(255) NOT NULL DEFAULT 'empty',
   `occupant` varchar(255) NOT NULL DEFAULT 'regular',
-  `total_amount` int(11) NULL,
+  `total_price` int(11) NULL,
   PRIMARY KEY (`id`),
   CONSTRAINT `fk_movie_link` 
     FOREIGN KEY (`movie_name`) 
