@@ -28,8 +28,9 @@ CREATE TABLE movies (
     screening_2 VARCHAR(255) NOT NULL,
     screening_3 VARCHAR(255) NOT NULL,
     screening_4 VARCHAR(255) NOT NULL,
+    poster VARCHAR(255) NOT NULL,
     PRIMARY KEY (id),
-    UNIQUE KEY `movie_name` (`movie_name`)
+    UNIQUE KEY `cinema_room` (`cinema_room`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 
@@ -37,23 +38,23 @@ Insert in movies:
 
 INSERT INTO movies (
     cinema_room, movie_name, genre, duration, price, mtrbc_rating, 
-    screening_1, screening_2, screening_3, screening_4
+    screening_1, screening_2, screening_3, screening_4, poster
 ) VALUES 
 (
-    'Cinema 1', 'Materialists', 'RomCom', '2 hours 00 minutes', 360, 'SPG', 
-    '10:00 AM – 12:00 PM', '12:40 PM – 02:40 PM', '03:20 PM – 05:20 PM', '06:00 PM – 08:00 PM'
+    'Cinema 1', 'Materialists', 'RomCom', '2 hours & 00 minutes', 360, 'SPG', 
+    '10:00 AM – 12:00 PM', '12:40 PM – 02:40 PM', '03:20 PM – 05:20 PM', '06:00 PM – 08:00 PM','materialistsPoster.jpg'
 ),
 (
-    'Cinema 2', 'Love Me, Love Me', 'Drama', '1 hour 40 minutes', 320, 'PG-13', 
-    '10:00 AM – 11:40 AM', '12:20 PM – 02:00 PM', '02:40 PM – 04:20 PM', '05:00 PM – 06:40 PM'
+    'Cinema 2', 'Love Me, Love Me', 'Drama', '1 hour & 40 minutes', 320, 'PG-13', 
+    '10:00 AM – 11:40 AM', '12:20 PM – 02:00 PM', '02:40 PM – 04:20 PM', '05:00 PM – 06:40 PM','lovemePoster.jpg'
 ),
 (
-    'Cinema 3', 'Hoppers', 'Comedy', '1 hour 40 minutes', 380, 'PG-13', 
-    '10:00 AM – 11:40 AM', '12:20 PM – 02:00 PM', '02:40 PM – 04:20 PM', '05:00 PM – 06:40 PM'
+    'Cinema 3', 'Hoppers', 'Comedy', '1 hour & 40 minutes', 380, 'PG-13', 
+    '10:00 AM – 11:40 AM', '12:20 PM – 02:00 PM', '02:40 PM – 04:20 PM', '05:00 PM – 06:40 PM','hoppers.jpg'
 ),
 (
-    'Cinema 4', 'Scream 7', 'Horror', '1 hour 50 minutes', 420, 'SPG', 
-    '10:00 AM – 11:50 AM', '12:30 PM – 02:20 PM', '03:00 PM – 04:50 PM', '05:30 PM – 07:20 PM'
+    'Cinema 4', 'Scream 7', 'Horror', '1 hour & 50 minutes', 420, 'SPG', 
+    '10:00 AM – 11:50 AM', '12:30 PM – 02:20 PM', '03:00 PM – 04:50 PM', '05:30 PM – 07:20 PM','screamPoster.jpg'
 );
 
 
@@ -63,17 +64,16 @@ Reserved tickets table: (Foreign key sa movies
 CREATE TABLE `reserved_tickets` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `movie_name` varchar(255) NOT NULL,
+  `cinema_room` varchar(255) NOT NULL,
   `schedule` varchar(255) NOT NULL DEFAULT 'empty',
   `date` varchar(255) NOT NULL DEFAULT 'empty',
   `seat` varchar(255) NOT NULL DEFAULT 'empty',
   `occupant` varchar(255) NOT NULL DEFAULT 'regular',
   `total_price` int(11) NULL,
   PRIMARY KEY (`id`),
-  CONSTRAINT `fk_movie_link` 
-    FOREIGN KEY (`movie_name`) 
-    REFERENCES `movies` (`movie_name`) 
-    ON DELETE CASCADE 
-    ON UPDATE CASCADE
+  CONSTRAINT `fk_cinema_link` 
+    FOREIGN KEY (`cinema_room`) 
+    REFERENCES `movies` (`cinema_room`) 
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 
