@@ -16,26 +16,45 @@ CREATE TABLE employees (
 
 Movies table:
 
-CREATE TABLE `movies` (
-  `id` int(11) NOT NULL AUTO_INCREMENT,
-  `cinema_room` varchar(255) NOT NULL,
-  `movie_name` varchar(255) NOT NULL,
-  `genre` varchar(255) NOT NULL,
-  `duration` varchar(255) NOT NULL,
-  `price` int(11) NOT NULL,
-  `mtrbc_rating` varchar(255) NOT NULL,
-  PRIMARY KEY (`id`),
-  UNIQUE KEY `movie_name` (`movie_name`)
+CREATE TABLE movies (
+    id INT(11) NOT NULL AUTO_INCREMENT,
+    cinema_room VARCHAR(255) NOT NULL,
+    movie_name VARCHAR(255) NOT NULL,
+    genre VARCHAR(255) NOT NULL,
+    duration VARCHAR(255) NOT NULL,
+    price INT(11) NOT NULL,
+    mtrbc_rating VARCHAR(255) NOT NULL,
+    screening_1 VARCHAR(255) NOT NULL,
+    screening_2 VARCHAR(255) NOT NULL,
+    screening_3 VARCHAR(255) NOT NULL,
+    screening_4 VARCHAR(255) NOT NULL,
+    PRIMARY KEY (id),
+    UNIQUE KEY `movie_name` (`movie_name`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 
 Insert in movies:
 
-INSERT INTO `movies` (`id`, `cinema_room`, `movie_name`, `genre`, `duration`, `price`, `mtrbc_rating`) VALUES
-(1, 'Cinema 1', 'Materialists', 'RomCom', '1h 57m', 230, 'SPG'),
-(2, 'Cinema 2', 'Love Me, Love Me', 'Drama', '1h 39m', 230, 'PG-13'),
-(3, 'Cinema 3', 'Hoppers', 'Comedy', '1h 45m', 230, 'PG-13'),
-(4, 'Cinema 4', 'Scream 7', 'Horror', '1h 54m', 230, 'SPG');
+INSERT INTO movies (
+    cinema_room, movie_name, genre, duration, price, mtrbc_rating, 
+    screening_1, screening_2, screening_3, screening_4
+) VALUES 
+(
+    'Cinema 1', 'Materialists', 'RomCom', '2 hours 00 minutes', 360, 'SPG', 
+    '10:00 AM – 12:00 PM', '12:40 PM – 02:40 PM', '03:20 PM – 05:20 PM', '06:00 PM – 08:00 PM'
+),
+(
+    'Cinema 2', 'Love Me, Love Me', 'Drama', '1 hour 40 minutes', 320, 'PG-13', 
+    '10:00 AM – 11:40 AM', '12:20 PM – 02:00 PM', '02:40 PM – 04:20 PM', '05:00 PM – 06:40 PM'
+),
+(
+    'Cinema 3', 'Hoppers', 'Comedy', '1 hour 40 minutes', 380, 'PG-13', 
+    '10:00 AM – 11:40 AM', '12:20 PM – 02:00 PM', '02:40 PM – 04:20 PM', '05:00 PM – 06:40 PM'
+),
+(
+    'Cinema 4', 'Scream 7', 'Horror', '1 hour 50 minutes', 420, 'SPG', 
+    '10:00 AM – 11:50 AM', '12:30 PM – 02:20 PM', '03:00 PM – 04:50 PM', '05:30 PM – 07:20 PM'
+);
 
 
 
