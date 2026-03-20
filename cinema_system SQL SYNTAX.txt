@@ -70,6 +70,7 @@ CREATE TABLE `reserved_tickets` (
   `seat` varchar(255) NOT NULL DEFAULT 'empty',
   `occupant` varchar(255) NOT NULL DEFAULT 'regular',
   `total_price` int(11) NULL,
+  `cashier` varchar(255) NULL,
   PRIMARY KEY (`id`),
   CONSTRAINT `fk_cinema_link` 
     FOREIGN KEY (`cinema_room`) 
