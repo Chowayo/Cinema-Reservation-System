@@ -41,19 +41,19 @@ INSERT INTO movies (
     screening_1, screening_2, screening_3, screening_4, poster
 ) VALUES 
 (
-    'Cinema 1', 'Materialists', 'RomCom', '2 hours & 00 minutes', 360, 'SPG', 
+    'Cinema 1', 'Materialists', 'RomCom', '2 hours & 00 minutes', 360, 'R-13', 
     '10:00 AM – 12:00 PM', '12:40 PM – 02:40 PM', '03:20 PM – 05:20 PM', '06:00 PM – 08:00 PM','materialistsPoster.jpg'
 ),
 (
-    'Cinema 2', 'Love Me, Love Me', 'Drama', '1 hour & 40 minutes', 320, 'PG-13', 
+    'Cinema 2', 'Love Me, Love Me', 'Drama', '1 hour & 40 minutes', 320, 'PG', 
     '10:00 AM – 11:40 AM', '12:20 PM – 02:00 PM', '02:40 PM – 04:20 PM', '05:00 PM – 06:40 PM','lovemePoster.jpg'
 ),
 (
-    'Cinema 3', 'Hoppers', 'Comedy', '1 hour & 40 minutes', 380, 'PG-13', 
+    'Cinema 3', 'Hoppers', 'Comedy', '1 hour & 40 minutes', 380, 'PG', 
     '10:00 AM – 11:40 AM', '12:20 PM – 02:00 PM', '02:40 PM – 04:20 PM', '05:00 PM – 06:40 PM','hoppers.jpg'
 ),
 (
-    'Cinema 4', 'Scream 7', 'Horror', '1 hour & 50 minutes', 420, 'SPG', 
+    'Cinema 4', 'Scream 7', 'Horror', '1 hour & 50 minutes', 420, 'R-13', 
     '10:00 AM – 11:50 AM', '12:30 PM – 02:20 PM', '03:00 PM – 04:50 PM', '05:30 PM – 07:20 PM','screamPoster.jpg'
 );
 
